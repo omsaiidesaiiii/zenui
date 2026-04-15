@@ -107,86 +107,143 @@ export default function LandingPage() {
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col items-start mb-16">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">Atomic Precision</h2>
-            <p className="text-[#c8c6c5] max-w-xl">Every component is machined to perfection. No bloat, just pure performance and obsidian aesthetics.</p>
+            <h2 className="text-3xl font-bold tracking-tight mb-4">Production-Ready Components</h2>
+            <p className="text-[#c8c6c5] max-w-xl">Fully accessible, customizable components built with Tailwind CSS. Drop them directly into your Next.js applications.</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
-            {/* Large Card */}
-            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+            {/* Large Card: Form Elements */}
+            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 shadow-2xl shadow-transparent hover:shadow-black/50 flex flex-col justify-between">
               <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10">
-                <div className="flex items-center gap-3 mb-6">
-                  <LayoutDashboard className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
-                  <h3 className="text-xl font-bold">Interactive Shells</h3>
-                </div>
-                <div className="flex flex-col md:flex-row gap-6 mt-12">
-                  <div className="flex-1 bg-[#1c1b1b] p-6 rounded-lg border border-[#3d4a3d]/10">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="h-8 w-24 bg-[#201f1f] rounded animate-pulse"></div>
-                      <div className="h-6 w-6 rounded-full bg-[#00643c]/20"></div>
-                    </div>
-                    <div className="space-y-3">
-                      <div className="h-2 w-full bg-[#353534] rounded"></div>
-                      <div className="h-2 w-3/4 bg-[#353534] rounded"></div>
-                    </div>
+              <div className="relative z-10 flex flex-col md:flex-row h-full">
+                
+                <div className="p-8 md:w-1/2 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Form Elements</h3>
+                    <p className="text-[#c8c6c5] text-sm mb-8">Accessible, customizable form controls with built-in validation states, floating labels, and flawless focus rings.</p>
                   </div>
-                  <div className="flex-1 space-y-4 text-white">
-                    <button className="uiverse-btn !w-full !h-[48px] font-bold">Deploy Now</button>
-                    <button className="w-full border border-[#3d4a3d]/20 hover:border-[#249c66] hover:text-[#249c66] py-3 rounded-lg text-sm text-[#c8c6c5] transition-all duration-300">Cancel Transaction</button>
+                  <div className="flex gap-3">
+                    <button className="flex items-center gap-2 bg-[#201f1f] hover:bg-[#2a2a2a] text-[#e5e2e1] px-4 py-2 rounded-lg text-sm transition-colors border border-[#3d4a3d]/20 hover:border-[#249c66]/50">
+                      <Copy className="w-4 h-4" /> Copy Code
+                    </button>
+                    <button className="text-[#3ecf8e] text-sm font-semibold hover:text-[#249c66] transition-colors">
+                      View Docs →
+                    </button>
                   </div>
                 </div>
+
+                <div className="p-8 md:w-1/2 bg-[#171717] border-l border-[#1f1f1f] flex items-center justify-center">
+                  <div className="w-full max-w-sm space-y-4">
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-[#8e8e8e]">EMAIL ADDRESS</label>
+                      <input type="email" placeholder="you@company.com" className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg px-4 py-2.5 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#3ecf8e] focus:ring-1 focus:ring-[#3ecf8e] transition-all" />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label className="text-xs font-semibold text-[#8e8e8e]">PASSWORD</label>
+                      <input type="password" placeholder="••••••••" className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg px-4 py-2.5 text-sm text-[#e5e2e1] focus:outline-none focus:border-[#3ecf8e] focus:ring-1 focus:ring-[#3ecf8e] transition-all" />
+                    </div>
+                    <button className="uiverse-btn !w-full !max-w-none !h-[42px] font-bold text-sm mt-2">
+                       Sign In
+                    </button>
+                  </div>
+                </div>
+
               </div>
             </div>
 
-            {/* Small Card */}
-            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+            {/* Small Card: Button Styles */}
+            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 shadow-2xl shadow-transparent hover:shadow-black/50 flex flex-col justify-between">
               <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="relative z-10 flex flex-col h-full">
-                <div className="flex items-center gap-3 mb-4">
-                  <Palette className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
-                  <h3 className="text-xl font-bold">Smart Tokens</h3>
+              
+              <div className="p-8 bg-[#171717] border-b border-[#1f1f1f] h-[240px] flex items-center justify-center relative z-10">
+                <div className="flex flex-col gap-3 w-full max-w-[200px]">
+                  <button className="uiverse-btn !w-full !max-w-none !h-[42px] font-bold text-sm">Primary Action</button>
+                  <button className="border border-[#2a2a2a] bg-[#111111] text-[#e5e2e1] font-semibold py-2.5 px-4 rounded-lg hover:bg-[#201f1f] hover:border-[#3d4a3d] transition-colors w-full text-sm">Secondary</button>
+                  <button className="text-[#8e8e8e] font-semibold py-2 px-4 rounded-lg hover:text-[#e5e2e1] hover:bg-[#201f1f] transition-colors w-full text-sm">Ghost Button</button>
                 </div>
-                <p className="text-sm text-[#c8c6c5] mb-8">Dynamic surface tiers that adapt to your layout hierarchy automatically.</p>
-                <div className="mt-auto grid grid-cols-2 gap-2">
-                  <div className="h-12 bg-[#201f1f] rounded-md transition-colors group-hover:bg-[#252525]"></div>
-                  <div className="h-12 bg-[#2a2a2a] rounded-md transition-colors group-hover:bg-[#252525]"></div>
-                  <div className="h-12 bg-[#353534] rounded-md transition-colors group-hover:bg-[#252525]"></div>
-                  <div className="h-12 bg-[#3a3939] rounded-md transition-colors group-hover:bg-[#252525]"></div>
+              </div>
+
+              <div className="p-6 relative z-10 flex-col flex justify-between h-[180px]">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Buttons</h3>
+                  <p className="text-[#c8c6c5] text-sm line-clamp-2">A core set of buttons with precise padding, typography, and interactive states.</p>
+                </div>
+                <div className="flex justify-between items-center mt-4 border-t border-[#3d4a3d]/10 pt-4">
+                  <button className="text-[#c8c6c5] hover:text-white transition-colors flex items-center gap-2 text-sm" title="Copy Code">
+                    <Copy className="w-4 h-4" /> Copy
+                  </button>
+                  <button className="text-[#3ecf8e] text-sm font-semibold hover:text-[#249c66] transition-colors">
+                    View
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Micro Interactions */}
-            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
-              <div className="flex items-center gap-3 mb-4">
-                <Pointer className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
-                <h3 className="text-xl font-bold">Micro-Interactions</h3>
-              </div>
-              <div className="flex items-center justify-center py-8">
-                <div className="flex items-center gap-2 p-2 bg-[#201f1f] rounded-full border border-[#3d4a3d]/10 group-hover:border-[#249c66]/30 transition-all duration-300">
-                  <div className="w-8 h-8 rounded-full bg-[#00643c] group-hover:bg-[#249c66] text-white flex items-center justify-center transition-colors">
-                    <Check className="w-4 h-4" />
+            {/* Small Card: Modal / Dialog */}
+            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 shadow-2xl shadow-transparent hover:shadow-black/50 flex flex-col justify-between">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div className="p-8 bg-[#171717] border-b border-[#1f1f1f] h-[240px] flex items-center justify-center relative z-10 w-full overflow-hidden">
+                <div className="bg-[#111111] border border-[#2a2a2a] rounded-xl shadow-[0_10px_40px_-10px_rgba(0,0,0,0.8)] w-full max-w-[280px] p-5 cursor-pointer hover:border-[#3ecf8e]/40 transition-all duration-300 transform group-hover:scale-[1.02]">
+                  <h4 className="text-white font-semibold mb-2 text-sm">Delete Project</h4>
+                  <p className="text-[#8e8e8e] text-xs mb-4 leading-relaxed">Are you sure? This action cannot be undone and will permanently delete your data.</p>
+                  <div className="flex gap-2 justify-end">
+                    <div className="px-3 py-1.5 text-xs font-semibold text-[#c8c6c5] bg-[#201f1f] rounded-lg hover:bg-[#2a2a2a] transition-colors">Cancel</div>
+                    <div className="px-3 py-1.5 text-xs font-semibold text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors">Delete</div>
                   </div>
-                  <span className="px-3 text-sm font-medium">Action Completed</span>
+                </div>
+              </div>
+
+              <div className="p-6 relative z-10 flex-col flex justify-between h-[180px]">
+                <div>
+                  <h3 className="text-xl font-bold text-white mb-2">Dialogs</h3>
+                  <p className="text-[#c8c6c5] text-sm line-clamp-2">Interruptive overlays for critical user actions, fully accessible with focus traps.</p>
+                </div>
+                <div className="flex justify-between items-center mt-4 border-t border-[#3d4a3d]/10 pt-4">
+                  <button className="text-[#c8c6c5] hover:text-white transition-colors flex items-center gap-2 text-sm" title="Copy Code">
+                    <Copy className="w-4 h-4" /> Copy
+                  </button>
+                  <button className="text-[#3ecf8e] text-sm font-semibold hover:text-[#249c66] transition-colors">
+                    View
+                  </button>
                 </div>
               </div>
             </div>
 
-            {/* Layered Navigation */}
-            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
-              <div className="flex items-center gap-3 mb-4">
-                <Layers className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
-                <h3 className="text-xl font-bold">Layered Navigation</h3>
-              </div>
-              <div className="bg-[#0e0e0e] border border-[#3d4a3d]/10 rounded-lg p-2 mt-6">
-                <div className="flex gap-4 p-4 border-b border-[#3d4a3d]/10">
-                  <div className="h-3 w-12 bg-[#006239]/20 rounded"></div>
-                  <div className="h-3 w-12 bg-[#353534] rounded"></div>
-                  <div className="h-3 w-12 bg-[#353534] rounded"></div>
+            {/* Large Card: Navigation / UI */}
+            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 shadow-2xl shadow-transparent hover:shadow-black/50 flex flex-col justify-between">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              
+              <div className="relative z-10 flex flex-col md:flex-row h-full">
+                <div className="p-8 md:w-1/2 flex flex-col justify-between order-2 md:order-1">
+                  <div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Navigation Components</h3>
+                    <p className="text-[#c8c6c5] text-sm mb-8">Responsive navigation bars, pill-shaped segment controls, and tab groups with smooth, accessible states.</p>
+                  </div>
+                  <div className="flex gap-3">
+                    <button className="flex items-center gap-2 bg-[#201f1f] hover:bg-[#2a2a2a] text-[#e5e2e1] px-4 py-2 rounded-lg text-sm transition-colors border border-[#3d4a3d]/20 hover:border-[#249c66]/50">
+                      <Copy className="w-4 h-4" /> Copy Code
+                    </button>
+                    <button className="text-[#3ecf8e] text-sm font-semibold hover:text-[#249c66] transition-colors">
+                      View Docs →
+                    </button>
+                  </div>
                 </div>
-                <div className="p-4 h-24">
-                  <div className="h-full w-full border-2 border-dashed border-[#3d4a3d]/20 rounded"></div>
+
+                <div className="p-8 md:w-1/2 bg-[#171717] border-l border-[#1f1f1f] flex flex-col items-center justify-center order-1 md:order-2">
+                  <div className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-lg p-1.5 flex gap-1 mb-8 shadow-inner shadow-black/20">
+                    <button className="flex-1 text-center py-2 text-xs font-semibold bg-[#201f1f] text-white rounded shadow-sm border border-[#3d4a3d]/20 transition-all">Account</button>
+                    <button className="flex-1 text-center py-2 text-xs font-semibold text-[#c8c6c5] hover:text-white rounded border border-transparent hover:bg-[#1a1a1a] transition-all">Security</button>
+                    <button className="flex-1 text-center py-2 text-xs font-semibold text-[#c8c6c5] hover:text-white rounded border border-transparent hover:bg-[#1a1a1a] transition-all">Billing</button>
+                  </div>
+                  <div className="w-full bg-[#0a0a0a] border border-[#2a2a2a] rounded-xl px-4 py-3 flex justify-between items-center shadow-lg">
+                     <span className="text-sm font-black text-white tracking-tighter">Zen<span className="text-[#3ecf8e]">UI</span></span>
+                     <div className="flex gap-5">
+                       <span className="text-xs font-semibold text-[#8e8e8e] hover:text-white transition-colors cursor-pointer">Modules</span>
+                       <span className="text-xs font-semibold text-white cursor-pointer relative after:absolute after:bottom-[-16px] after:left-0 after:w-full after:h-[2px] after:bg-[#3ecf8e]">Pricing</span>
+                       <span className="text-xs font-semibold text-[#8e8e8e] hover:text-white transition-colors cursor-pointer">Docs</span>
+                     </div>
+                  </div>
                 </div>
               </div>
             </div>
