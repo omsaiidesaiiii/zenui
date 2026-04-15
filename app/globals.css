@@ -72,6 +72,14 @@ body {
   background: var(--muted-foreground);
 }
 
+@utility no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+  }
+}
+
 /* Landing page button gradient */
 .uiverse-btn {
   width: 140px;

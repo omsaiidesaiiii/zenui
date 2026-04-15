@@ -34,10 +34,12 @@ export function Sidebar() {
               </li>
               <li>
                 <Link
-                  href="/components"
+                  href="/installation"
                   className={cn(
                     "block rounded-md px-2 py-1.5 text-sm transition-colors",
-                    "text-[var(--muted-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+                    pathname === "/installation"
+                      ? "bg-[var(--muted)] font-medium text-[var(--foreground)]"
+                      : "text-[var(--muted-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
                   )}
                 >
                   Installation

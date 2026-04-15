@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "bin": {
-    "zen-ui": "./index.js"
+    "zenui": "./index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

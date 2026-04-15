@@ -13,11 +13,17 @@ import {
   Moon,
   Code
 } from 'lucide-react';
+import { motion } from 'framer-motion';
 import DarkVeil from './DarkVeil';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans">
+    <motion.div 
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans"
+    >
       {/* Nav Shell */}
       <nav className="fixed top-0 w-full z-50 bg-neutral-700/10 backdrop-blur-xl border-b border-gray-500/15 shadow-2xl shadow-emerald-500/5">
         <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
@@ -348,6 +354,6 @@ export default function LandingPage() {
           </div>
         </div>
       </footer>
-    </div>
+    </motion.div>
   );
 }

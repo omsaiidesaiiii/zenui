@@ -68,6 +68,20 @@ export function MobileSidebar() {
                       Introduction
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/installation"
+                      onClick={() => setOpen(false)}
+                      className={cn(
+                        "block rounded-md px-2 py-1.5 text-sm transition-colors",
+                        pathname === "/installation"
+                          ? "bg-[var(--muted)] font-medium text-[var(--foreground)]"
+                          : "text-[var(--muted-foreground)] hover:bg-[var(--muted)] hover:text-[var(--foreground)]"
+                      )}
+                    >
+                      Installation
+                    </Link>
+                  </li>
                 </ul>
               </div>
 
