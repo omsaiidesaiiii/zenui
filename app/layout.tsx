@@ -36,7 +36,7 @@ export default function RootLayout({
           </div>
           <footer className="py-8 border-t border-[var(--border)] text-center">
             <p className="text-sm text-[var(--muted-foreground)]">
-              Made with love by <span className="text-[var(--foreground)] font-medium">Omsai Desai 🤍</span>
+              Made with 🤍 by <span className="text-[var(--foreground)] font-medium">Omsai Desai </span>
             </p>
           </footer>
         </ThemeProvider>
