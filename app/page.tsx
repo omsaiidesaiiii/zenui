@@ -1,363 +1,277 @@
 import React from 'react';
 import Link from 'next/link';
 import { 
-  Terminal, 
-  Copy, 
-  ChevronRight, 
-  Layout, 
-  Moon, 
-  Zap, 
-  Code, 
-  CircleCheck,
-  Box,
+  ArrowRight,
+  Copy,
+  LayoutDashboard,
+  Palette,
+  Pointer,
+  Check,
   Layers,
-  Sparkles
+  Terminal,
+  Moon,
+  Code
 } from 'lucide-react';
-
-// Custom SVG components for brand icons removed in Lucide v0.400+
-const GitHub = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const Twitter = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="none" 
-    stroke="currentColor" 
-    strokeWidth="2" 
-    strokeLinecap="round" 
-    strokeLinejoin="round" 
-    className={className}
-  >
-    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
-  </svg>
-);
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-[#22c55e]/30 selection:text-white font-sans overflow-x-hidden">
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 w-full border-b border-[#1f1f1f] bg-[#0a0a0a]/80 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans">
+      {/* Nav Shell */}
+      <nav className="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
+        <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[#22c55e] to-teal-600 flex items-center justify-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-white/20 blur-sm group-hover:blur-md transition-all"></div>
-                <Layout className="w-4 h-4 text-white relative z-10" />
-              </div>
-              <span className="font-bold text-xl tracking-tight">ZenUI</span>
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-6 text-sm font-medium text-[#9ca3af]">
-              <Link href="/docs" className="hover:text-white transition-colors">Docs</Link>
-              <Link href="/components" className="hover:text-white transition-colors">Components</Link>
-              <Link href="/blog" className="hover:text-white transition-colors">Blog</Link>
-              <Link href="/pricing" className="hover:text-white transition-colors">Pricing</Link>
+            <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">ZenUI</Link>
+            <div className="hidden md:flex items-center gap-6">
+              <Link href="/docs" className="text-[#3ecf8e] border-b-2 border-[#3ecf8e] pb-1 tracking-tight font-bold">Docs</Link>
+              <Link href="/components" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">Components</Link>
+              <Link href="https://github.com" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">GitHub</Link>
             </div>
           </div>
-          
           <div className="flex items-center gap-4">
-            <Link href="https://github.com" target="_blank" className="text-[#9ca3af] hover:text-white transition-colors hidden sm:block">
-              <GitHub className="w-5 h-5" />
-            </Link>
-            <Link href="/login" className="text-sm font-medium text-[#9ca3af] hover:text-white transition-colors hidden sm:block">
-              Sign In
-            </Link>
-            <button className="h-9 px-4 rounded-md bg-[#22c55e] hover:bg-[#1ea34d] text-black font-semibold text-sm transition-all shadow-[0_0_15px_rgba(34,197,94,0.3)] hover:shadow-[0_0_25px_rgba(34,197,94,0.5)]">
+            <button className="uiverse-btn !w-[120px] !h-[40px] text-sm">
               Get Started
             </button>
           </div>
         </div>
       </nav>
 
-      <main>
-        {/* Hero Section */}
-        <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
-          {/* Subtle Background Glow */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#22c55e]/10 rounded-full blur-[120px] pointer-events-none"></div>
-          
-          <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#111111] border border-[#1f1f1f] text-sm text-[#9ca3af] mb-8 hover:border-[#22c55e]/50 transition-colors cursor-pointer">
-              <Sparkles className="w-4 h-4 text-[#22c55e]" />
-              <span>Introducing ZenUI Pro Components</span>
-              <ChevronRight className="w-4 h-4" />
-            </div>
-            
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter leading-[1.1] mb-6">
-              Build UI faster. <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22c55e] to-teal-400 drop-shadow-[0_0_30px_rgba(34,197,94,0.2)]">
-                Scale like a pro.
-              </span>
-            </h1>
-            
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-[#9ca3af] mb-10 leading-relaxed font-light">
-              A premium, open-source UI component library designed for modern web apps. 
-              Beautifully styled, accessible, and ready to drop into your Next.js project.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <button className="w-full sm:w-auto h-12 px-8 rounded-lg bg-[#22c55e] hover:bg-[#1ea34d] text-black font-semibold text-md transition-all shadow-[0_0_20px_rgba(34,197,94,0.4)] hover:shadow-[0_0_30px_rgba(34,197,94,0.6)] flex items-center justify-center gap-2">
-                Start Building <ChevronRight className="w-4 h-4" />
-              </button>
-              <button className="w-full sm:w-auto h-12 px-8 rounded-lg bg-[#111111] hover:bg-[#1a1a1a] border border-[#1f1f1f] hover:border-[#333] text-white font-medium text-md transition-all flex items-center justify-center gap-2">
-                <Box className="w-4 h-4 text-[#9ca3af]" /> View Components
-              </button>
-            </div>
+      {/* Hero Section */}
+      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] max-w-full h-[800px] pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 98, 57, 0.15) 0%, transparent 70%)' }}></div>
+        <div className="max-w-5xl mx-auto text-center relative z-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3d4a3d]/20 bg-[#1c1b1b] text-[#006239] text-xs font-medium mb-8">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#006239] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#006239]"></span>
+            </span>
+            v2.4.0 is now live
           </div>
-        </section>
-
-        {/* Code / CLI Section */}
-        <section className="py-12 relative z-20">
-          <div className="max-w-3xl mx-auto px-6">
-            <div className="rounded-xl border border-[#1f1f1f] bg-[#111111]/80 backdrop-blur-xl p-4 shadow-2xl relative group overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#22c55e]/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="flex items-center justify-between mb-4 px-2">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-[#333]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#333]"></div>
-                  <div className="w-3 h-3 rounded-full bg-[#333]"></div>
-                </div>
-                <div className="text-xs text-[#9ca3af] font-mono flex items-center gap-2">
-                  <Terminal className="w-3 h-3" /> terminal
-                </div>
-              </div>
-              <div className="relative bg-[#0a0a0a] rounded-lg p-5 font-mono text-sm sm:text-base text-gray-300 flex items-center justify-between group/code border border-[#1f1f1f]">
-                <div className="flex items-center gap-3 overflow-x-auto">
-                  <span className="text-[#22c55e] select-none">➜</span>
-                  <span className="text-[#9ca3af]">~</span>
-                  <span className="text-white">npx <span className="text-[#22c55e]">zenui@latest</span> init</span>
-                </div>
-                <button className="p-2 rounded-md hover:bg-[#1f1f1f] text-[#9ca3af] hover:text-white transition-colors opacity-0 group-hover/code:opacity-100 focus:opacity-100 flex-shrink-0">
-                  <Copy className="w-4 h-4" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Framework Support */}
-        <section className="py-10 border-t border-b border-[#1f1f1f] bg-[#0d0d0d]">
-          <div className="max-w-7xl mx-auto px-6">
-            <p className="text-center text-sm font-medium text-[#9ca3af] mb-6 uppercase tracking-wider">Works seamlessly with</p>
-            <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60">
-              <div className="flex items-center gap-2"><Layers className="w-6 h-6" /> <span className="font-semibold text-lg">Next.js</span></div>
-              <div className="flex items-center gap-2"><Code className="w-6 h-6" /> <span className="font-semibold text-lg">React</span></div>
-              <div className="flex items-center gap-2"><Zap className="w-6 h-6" /> <span className="font-semibold text-lg">Vite</span></div>
-              <div className="flex items-center gap-2"><Box className="w-6 h-6" /> <span className="font-semibold text-lg">Remix</span></div>
-            </div>
-          </div>
-        </section>
-
-        {/* Component Showcase (Grid) */}
-        <section className="py-32 relative">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4">Crafted for perfection.</h2>
-              <p className="text-[#9ca3af] text-lg max-w-2xl">Copy and paste beautifully designed components directly into your application. Fully customizable and accessible.</p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {/* Component Card 1 */}
-              <div className="group rounded-2xl border border-[#1f1f1f] bg-[#111111] overflow-hidden hover:border-[#22c55e]/40 transition-all duration-300 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#22c55e]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="p-6 border-b border-[#1f1f1f] h-48 flex items-center justify-center bg-[#0a0a0a] relative overflow-hidden">
-                  {/* Grid background pattern */}
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]"></div>
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-                  
-                  <button className="relative z-10 h-10 px-6 rounded-lg bg-white text-black font-medium text-sm hover:!bg-[#22c55e] hover:!text-black transition-colors duration-300 shadow-lg">
-                    Primary Button
-                  </button>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-lg mb-1 text-white group-hover:text-[#22c55e] transition-colors">Interactive Buttons</h3>
-                  <p className="text-[#9ca3af] text-sm">Multiple variants, sizes, and states. Micro-animations included.</p>
-                </div>
-              </div>
-
-              {/* Component Card 2 */}
-              <div className="group rounded-2xl border border-[#1f1f1f] bg-[#111111] overflow-hidden hover:border-[#22c55e]/40 transition-all duration-300 relative">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#22c55e]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="p-6 border-b border-[#1f1f1f] h-48 flex items-center justify-center bg-[#0a0a0a] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]"></div>
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-                  
-                  <div className="relative z-10 w-full max-w-[240px] bg-[#111111] border border-[#1f1f1f] rounded-xl p-4 shadow-xl">
-                    <div className="flex items-center gap-3 mb-3">
-                      <div className="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-500 to-purple-500"></div>
-                      <div>
-                        <div className="h-3 w-20 bg-[#2a2a2a] rounded mb-1.5"></div>
-                        <div className="h-2 w-12 bg-[#1f1f1f] rounded"></div>
-                      </div>
-                    </div>
-                    <div className="h-6 w-full bg-[#1a1a1a] rounded mt-2 border border-[#2a2a2a]"></div>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-lg mb-1 text-white group-hover:text-[#22c55e] transition-colors">Data Cards</h3>
-                  <p className="text-[#9ca3af] text-sm">Versatile card layouts for dashboards, profiles, and statistics.</p>
-                </div>
-              </div>
-
-              {/* Component Card 3 */}
-              <div className="group rounded-2xl border border-[#1f1f1f] bg-[#111111] overflow-hidden hover:border-[#22c55e]/40 transition-all duration-300 relative lg:col-span-1 md:col-span-2">
-                <div className="absolute inset-0 bg-gradient-to-b from-[#22c55e]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="p-6 border-b border-[#1f1f1f] h-48 flex items-center justify-center bg-[#0a0a0a] relative overflow-hidden">
-                  <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03]"></div>
-                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:14px_24px]"></div>
-                  
-                  <div className="relative z-10 bg-[#111111] border border-[#1f1f1f] rounded-lg p-1.5 shadow-xl flex items-center gap-1">
-                    <div className="px-3 py-1.5 rounded-md bg-[#22c55e] text-black text-xs font-semibold">Overview</div>
-                    <div className="px-3 py-1.5 rounded-md text-[#9ca3af] hover:text-white text-xs font-medium cursor-pointer transition-colors">Integrations</div>
-                    <div className="px-3 py-1.5 rounded-md text-[#9ca3af] hover:text-white text-xs font-medium cursor-pointer transition-colors">Settings</div>
-                  </div>
-                </div>
-                <div className="p-5">
-                  <h3 className="font-semibold text-lg mb-1 text-white group-hover:text-[#22c55e] transition-colors">Navigation Tabs</h3>
-                  <p className="text-[#9ca3af] text-sm">Animated, accessible tabs with fluid layout transitions.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Features Section */}
-        <section className="py-24 bg-[#0d0d0d] border-y border-[#1f1f1f]">
-          <div className="max-w-7xl mx-auto px-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-[#111111] border border-[#1f1f1f] flex items-center justify-center mb-5 text-[#22c55e]">
-                  <Terminal className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">CLI Tool</h3>
-                <p className="text-[#9ca3af] text-sm leading-relaxed">Add components to your project via command line. No more manual copying of complex files.</p>
-              </div>
-              
-              <div className="flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-[#111111] border border-[#1f1f1f] flex items-center justify-center mb-5 text-[#22c55e]">
-                  <Copy className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Copy & Paste</h3>
-                <p className="text-[#9ca3af] text-sm leading-relaxed">Don't want to use the CLI? Just copy and paste the code. You own the code completely.</p>
-              </div>
-
-              <div className="flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-[#111111] border border-[#1f1f1f] flex items-center justify-center mb-5 text-[#22c55e]">
-                  <Moon className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Dark Mode First</h3>
-                <p className="text-[#9ca3af] text-sm leading-relaxed">Designed specifically for dark mode with perfect contrast, subtle gradients, and glows.</p>
-              </div>
-
-              <div className="flex flex-col">
-                <div className="w-12 h-12 rounded-lg bg-[#111111] border border-[#1f1f1f] flex items-center justify-center mb-5 text-[#22c55e]">
-                  <Code className="w-6 h-6" />
-                </div>
-                <h3 className="text-lg font-semibold mb-2">Developer Experience</h3>
-                <p className="text-[#9ca3af] text-sm leading-relaxed">Built with TypeScript, Tailwind CSS, and Framer Motion. Exceptional DX right out of the box.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#22c55e]/5 pointer-events-none"></div>
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#22c55e]/20 blur-[150px] rounded-full pointer-events-none"></div>
-          
-          <div className="max-w-4xl mx-auto px-6 relative z-10 text-center">
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
-              Start building in seconds.
-            </h2>
-            <p className="text-xl text-[#9ca3af] mb-10 max-w-2xl mx-auto">
-              Join thousands of developers building fast, beautiful, accessible web applications with ZenUI.
-            </p>
-            <button className="h-14 px-10 rounded-lg bg-white hover:bg-gray-100 text-black font-bold text-lg transition-all shadow-[0_0_30px_rgba(255,255,255,0.1)] hover:shadow-[0_0_40px_rgba(255,255,255,0.2)]">
-              Get Started for Free
+          <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+            Build UI faster, <br/>
+            <span className="text-[#006239] italic">Scale like a pro</span>
+          </h1>
+          <p className="text-lg md:text-xl text-[#c8c6c5] max-w-2xl mx-auto mb-10 leading-relaxed">
+            An obsidian-grade component library designed for the technical elite. Copy-paste components that feel like a high-end IDE.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button className="uiverse-btn !w-full sm:!w-[180px] !h-[56px] text-lg">
+              Get Started
+              <ArrowRight className="w-5 h-5" />
             </button>
-            <div className="mt-8 flex items-center justify-center gap-6 text-sm text-[#9ca3af]">
-              <div className="flex items-center gap-2">
-                <CircleCheck className="w-4 h-4 text-[#22c55e]" /> MIT License
+            <button className="w-full sm:w-auto bg-[#2a2a2a] text-[#e5e2e1] font-bold px-8 py-4 rounded-xl border border-[#3d4a3d]/10 hover:bg-[#3a3939] transition-all">
+              View Components
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* CLI Section */}
+      <section className="py-12 px-6">
+        <div className="max-w-3xl mx-auto">
+          <div className="bg-[#0e0e0e] rounded-xl border border-[#3d4a3d]/15 p-1 shadow-2xl overflow-hidden">
+            <div className="flex items-center gap-2 px-4 py-2 border-b border-[#3d4a3d]/10 bg-[#201f1f]">
+              <div className="flex gap-1.5">
+                <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                <div className="w-3 h-3 rounded-full bg-green-500"></div>
               </div>
-              <div className="flex items-center gap-2">
-                <CircleCheck className="w-4 h-4 text-[#22c55e]" /> 100+ Components
+              <div className="text-[10px] text-[#c8c6c5] font-mono ml-4 opacity-50 uppercase tracking-widest">terminal</div>
+            </div>
+            <div className="p-6 font-mono text-sm sm:text-base flex justify-between items-center bg-[#0e0e0e]">
+              <div className="flex gap-4">
+                <span className="text-[#006239] shrink-0">$</span>
+                <span className="text-[#e5e2e1]">npx zenui@latest <span className="text-[#ffb5ab]">init</span></span>
               </div>
-              <div className="flex items-center gap-2 hidden sm:flex">
-                <CircleCheck className="w-4 h-4 text-[#22c55e]" /> Weekly Updates
-              </div>
+              <button className="p-2 rounded-lg hover:bg-[#201f1f] transition-colors text-[#c8c6c5] hover:text-[#3ecf8e]">
+                <Copy className="w-5 h-5" />
+              </button>
             </div>
           </div>
-        </section>
-      </main>
+        </div>
+      </section>
+
+      {/* Component Showcase (Bento Grid) */}
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col items-start mb-16">
+            <h2 className="text-3xl font-bold tracking-tight mb-4">Atomic Precision</h2>
+            <p className="text-[#c8c6c5] max-w-xl">Every component is machined to perfection. No bloat, just pure performance and obsidian aesthetics.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            
+            {/* Large Card */}
+            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-6">
+                  <LayoutDashboard className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
+                  <h3 className="text-xl font-bold">Interactive Shells</h3>
+                </div>
+                <div className="flex flex-col md:flex-row gap-6 mt-12">
+                  <div className="flex-1 bg-[#1c1b1b] p-6 rounded-lg border border-[#3d4a3d]/10">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="h-8 w-24 bg-[#201f1f] rounded animate-pulse"></div>
+                      <div className="h-6 w-6 rounded-full bg-[#00643c]/20"></div>
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-2 w-full bg-[#353534] rounded"></div>
+                      <div className="h-2 w-3/4 bg-[#353534] rounded"></div>
+                    </div>
+                  </div>
+                  <div className="flex-1 space-y-4 text-white">
+                    <button className="uiverse-btn !w-full !h-[48px] font-bold">Deploy Now</button>
+                    <button className="w-full border border-[#3d4a3d]/20 hover:border-[#249c66] hover:text-[#249c66] py-3 rounded-lg text-sm text-[#c8c6c5] transition-all duration-300">Cancel Transaction</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Small Card */}
+            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#00643c]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-4">
+                  <Palette className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
+                  <h3 className="text-xl font-bold">Smart Tokens</h3>
+                </div>
+                <p className="text-sm text-[#c8c6c5] mb-8">Dynamic surface tiers that adapt to your layout hierarchy automatically.</p>
+                <div className="mt-auto grid grid-cols-2 gap-2">
+                  <div className="h-12 bg-[#201f1f] rounded-md transition-colors group-hover:bg-[#252525]"></div>
+                  <div className="h-12 bg-[#2a2a2a] rounded-md transition-colors group-hover:bg-[#252525]"></div>
+                  <div className="h-12 bg-[#353534] rounded-md transition-colors group-hover:bg-[#252525]"></div>
+                  <div className="h-12 bg-[#3a3939] rounded-md transition-colors group-hover:bg-[#252525]"></div>
+                </div>
+              </div>
+            </div>
+
+            {/* Micro Interactions */}
+            <div className="group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+              <div className="flex items-center gap-3 mb-4">
+                <Pointer className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
+                <h3 className="text-xl font-bold">Micro-Interactions</h3>
+              </div>
+              <div className="flex items-center justify-center py-8">
+                <div className="flex items-center gap-2 p-2 bg-[#201f1f] rounded-full border border-[#3d4a3d]/10 group-hover:border-[#249c66]/30 transition-all duration-300">
+                  <div className="w-8 h-8 rounded-full bg-[#00643c] group-hover:bg-[#249c66] text-white flex items-center justify-center transition-colors">
+                    <Check className="w-4 h-4" />
+                  </div>
+                  <span className="px-3 text-sm font-medium">Action Completed</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Layered Navigation */}
+            <div className="md:col-span-2 group relative bg-[#111111] border border-[#1f1f1f] rounded-xl overflow-hidden p-8 hover:border-[#249c66]/40 hover:-translate-y-1 transition-all duration-300 delay-150 shadow-2xl shadow-transparent hover:shadow-black/50">
+              <div className="flex items-center gap-3 mb-4">
+                <Layers className="w-6 h-6 text-[#00643c] group-hover:text-[#249c66] transition-colors" />
+                <h3 className="text-xl font-bold">Layered Navigation</h3>
+              </div>
+              <div className="bg-[#0e0e0e] border border-[#3d4a3d]/10 rounded-lg p-2 mt-6">
+                <div className="flex gap-4 p-4 border-b border-[#3d4a3d]/10">
+                  <div className="h-3 w-12 bg-[#006239]/20 rounded"></div>
+                  <div className="h-3 w-12 bg-[#353534] rounded"></div>
+                  <div className="h-3 w-12 bg-[#353534] rounded"></div>
+                </div>
+                <div className="p-4 h-24">
+                  <div className="h-full w-full border-2 border-dashed border-[#3d4a3d]/20 rounded"></div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+      {/* Frameworks */}
+      <section className="py-12 px-6 border-y border-[#3d4a3d]/5">
+        <div className="max-w-7xl mx-auto text-center">
+          <p className="text-xs font-bold uppercase tracking-[0.2em] text-[#c8c6c5] mb-12 opacity-50">Optimized for your stack</p>
+          <div className="flex flex-wrap items-center justify-center gap-12 md:gap-24 grayscale opacity-40 hover:grayscale-0 transition-all duration-500">
+            <div className="flex items-center gap-3 font-bold text-2xl tracking-tighter">
+              <span className="text-[#e5e2e1]">Next.js</span>
+            </div>
+            <div className="flex items-center gap-3 font-bold text-2xl tracking-tighter">
+              <span className="text-[#61DAFB]">React</span>
+            </div>
+            <div className="flex items-center gap-3 font-bold text-2xl tracking-tighter">
+              <span className="text-[#FFC107]">Vite</span>
+            </div>
+            <div className="flex items-center gap-3 font-bold text-2xl tracking-tighter">
+              <span className="text-[#06B6D4]">Tailwind</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features Section */}
+      <section className="py-24 px-6 bg-[#0e0e0e]/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="group p-8 space-y-4 rounded-xl bg-[#131313] border border-[#3d4a3d]/5 hover:border-[#249c66]/20 transition-all duration-300 delay-150">
+              <Terminal className="w-8 h-8 text-[#00643c] group-hover:scale-110 transition-transform duration-300 delay-150" />
+              <h4 className="text-lg font-bold">CLI Tool</h4>
+              <p className="text-sm text-[#c8c6c5] leading-relaxed">Initialize projects and add components directly from your command line in seconds.</p>
+            </div>
+            <div className="group p-8 space-y-4 rounded-xl bg-[#131313] border border-[#3d4a3d]/5 hover:border-[#249c66]/20 transition-all duration-300 delay-150">
+              <Copy className="w-8 h-8 text-[#00643c] group-hover:scale-110 transition-transform duration-300 delay-150" />
+              <h4 className="text-lg font-bold">Copy-Paste</h4>
+              <p className="text-sm text-[#c8c6c5] leading-relaxed">No npm bloat. Copy the source code directly into your project and own it forever.</p>
+            </div>
+            <div className="group p-8 space-y-4 rounded-xl bg-[#131313] border border-[#3d4a3d]/5 hover:border-[#249c66]/20 transition-all duration-300 delay-150">
+              <Moon className="w-8 h-8 text-[#00643c] group-hover:scale-110 transition-transform duration-300 delay-150" />
+              <h4 className="text-lg font-bold">Dark First</h4>
+              <p className="text-sm text-[#c8c6c5] leading-relaxed">Engineered for the eyes of developers. Obsidian tones are at the core of every component.</p>
+            </div>
+            <div className="group p-8 space-y-4 rounded-xl bg-[#131313] border border-[#3d4a3d]/5 hover:border-[#249c66]/20 transition-all duration-300 delay-150">
+              <Code className="w-8 h-8 text-[#00643c] group-hover:scale-110 transition-transform duration-300 delay-150" />
+              <h4 className="text-lg font-bold">Total DX</h4>
+              <p className="text-sm text-[#c8c6c5] leading-relaxed">Fully typed with TypeScript and built with accessibility as a first-class citizen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-32 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#006239]/5 [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_70%)]"></div>
+        <div className="max-w-4xl mx-auto text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Start building in seconds</h2>
+          <p className="text-[#c8c6c5] mb-12 text-lg">Join 10,000+ developers building high-end interfaces with ZenUI.</p>
+          <button className="uiverse-btn mx-auto !w-[220px] !h-[64px] text-xl">
+            Get Started for Free
+          </button>
+        </div>
+      </section>
 
       {/* Footer */}
-      <footer className="border-t border-[#1f1f1f] bg-[#050505] pt-16 pb-8">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-16">
-            <div className="col-span-2 lg:col-span-2">
-              <Link href="/" className="flex items-center gap-2 mb-4">
-                <div className="w-6 h-6 rounded bg-gradient-to-br from-[#22c55e] to-teal-600 flex items-center justify-center">
-                  <Layout className="w-3 h-3 text-white" />
-                </div>
-                <span className="font-bold text-lg tracking-tight">ZenUI</span>
-              </Link>
-              <p className="text-[#9ca3af] text-sm max-w-sm mb-6">
-                A premium, beautifully designed UI library for modern React and Next.js applications.
-              </p>
-              <div className="flex items-center gap-4 text-[#9ca3af]">
-                <a href="#" className="hover:text-white transition-colors"><Twitter className="w-5 h-5" /></a>
-                <a href="#" className="hover:text-white transition-colors"><GitHub className="w-5 h-5" /></a>
-              </div>
-            </div>
-            
-            <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Resources</h4>
-              <ul className="space-y-3 text-sm text-[#9ca3af]">
-                <li><a href="#" className="hover:text-white transition-colors">Documentation</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Components</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Templates</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Figma File</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Company</h4>
-              <ul className="space-y-3 text-sm text-[#9ca3af]">
-                <li><a href="#" className="hover:text-white transition-colors">About</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Changelog</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Pricing</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4 text-sm text-white">Legal</h4>
-              <ul className="space-y-3 text-sm text-[#9ca3af]">
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">License</a></li>
-              </ul>
-            </div>
+      <footer className="w-full py-12 px-6 border-t border-emerald-500/10 bg-neutral-950">
+        <div className="max-w-7xl mx-auto w-full grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="col-span-2 md:col-span-1">
+            <div className="text-lg font-bold text-neutral-200 mb-4">ZenUI</div>
+            <p className="font-sans text-sm text-neutral-500 mb-6 max-w-xs">Built for the technical elite. The UI library that doesn't hold you back.</p>
+            <p className="font-sans text-xs text-neutral-600">© 2024 ZenUI. Built for the technical elite.</p>
           </div>
-          
-          <div className="border-t border-[#1f1f1f] pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[#9ca3af]">
-            <p>© {new Date().getFullYear()} ZenUI Inc. All rights reserved.</p>
-            <div className="flex items-center gap-1">
-              <span>Designed with</span>
-              <span className="text-[#22c55e]">♥</span>
-              <span>for developers</span>
-            </div>
+          <div>
+            <h5 className="text-neutral-100 font-bold mb-4 text-sm">Product</h5>
+            <ul className="space-y-2">
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Documentation</Link></li>
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Changelog</Link></li>
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Components</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="text-neutral-100 font-bold mb-4 text-sm">Legal</h5>
+            <ul className="space-y-2">
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Privacy</Link></li>
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Terms</Link></li>
+            </ul>
+          </div>
+          <div>
+            <h5 className="text-neutral-100 font-bold mb-4 text-sm">Community</h5>
+            <ul className="space-y-2">
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Twitter</Link></li>
+              <li><Link href="#" className="text-neutral-500 hover:text-[#3ecf8e] transition-colors text-sm">Discord</Link></li>
+            </ul>
           </div>
         </div>
       </footer>

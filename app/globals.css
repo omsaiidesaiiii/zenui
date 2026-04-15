@@ -14,3 +14,56 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.uiverse-btn {
+  width: 140px;
+  height: 50px;
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  /* 🔥 Gradient setup for animation */
+  background: linear-gradient(
+    120deg,
+    #00643c,
+    #008552,
+    #2ecc71,
+    #249c66
+  );
+  background-size: 300% 300%;
+  background-position: 0% 50%;
+
+  /* Smooth animation */
+  transition: 
+    background-position 0.6s ease,
+    transform 0.2s ease,
+    box-shadow 0.4s ease;
+
+  box-shadow:
+    inset 2px 2px 2px rgba(255,255,255,.3),
+    7px 7px 20px rgba(0,0,0,.2),
+    4px 4px 5px rgba(0,0,0,.2);
+}
+
+.uiverse-btn:hover {
+  /* 🔥 This creates the smooth flowing effect */
+  background-position: 100% 50%;
+
+  box-shadow:
+    inset 2px 2px 2px rgba(255,255,255,.4),
+    7px 7px 20px rgba(0,0,0,.25),
+    4px 4px 5px rgba(0,0,0,.25);
+}
+
+.uiverse-btn:active {
+  transform: scale(0.95);
+}
