@@ -15,6 +15,28 @@ app.get("/", (req, res) => {
   res.send("UI Registry API running 🚀");
 });
 
+app.get("/components", (req, res) => {
+  const componentsDir = path.join(__dirname, "data/components");
+  
+  if (!fs.existsSync(componentsDir)) {
+    return res.status(404).json({ error: "Components directory not found" });
+  }
+
+  const files = fs.readdirSync(componentsDir);
+  const components = files
+    .filter(file => file.endsWith('.json'))
+    .map(file => {
+      const filePath = path.join(componentsDir, file);
+      const data = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      return {
+        name: data.name || file.replace('.json', ''),
+        description: data.description || 'No description available'
+      };
+    });
+
+  res.json({ components });
+});
+
 app.get("/components/:name", (req, res) => {
   const { name } = req.params;
 

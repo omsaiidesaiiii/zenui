@@ -232,10 +232,11 @@ program
 program
   .command ('init')
   .description ('Initialize UI library')
-  .action (async () => {
+  .option ('--yes, -y', 'Skip prompts and use defaults')
+  .action (async (options) => {
     console.log ('🚀 Initializing your-ui...');
 
-    await setupProject ();
+    await setupProject (options.yes);
 
     console.log ('✅ Setup complete!');
   });
@@ -270,5 +271,36 @@ program.command ('add').argument ('<component>').action (async component => {
     console.log ('Make sure the backend is running on http://localhost:3001');
   }
 });
+
+program
+  .command ('list')
+  .description ('List all available components')
+  .action (async () => {
+    try {
+      console.log ('📦 Fetching available components...');
+      const res = await fetch ('http://localhost:3001/components');
+
+      if (!res.ok) {
+        console.log ('❌ Failed to fetch components (Status: ' + res.status + ')');
+        console.log ('Make sure the backend is running on http://localhost:3001');
+        return;
+      }
+
+      const data = await res.json ();
+
+      if (data.components && data.components.length > 0) {
+        console.log ('\n✨ Available Components:\n');
+        data.components.forEach ((comp) => {
+          console.log (`  • ${comp.name} - ${comp.description || 'No description'}`);
+        });
+        console.log ('');
+      } else {
+        console.log ('No components available');
+      }
+    } catch (error) {
+      console.log ('❌ Error fetching components:', error.message);
+      console.log ('Make sure the backend is running on http://localhost:3001');
+    }
+  });
 
 program.parse ();

@@ -1,5 +1,6 @@
 {
   "name": "button",
+  "description": "A reusable button component with multiple variants",
   "dependencies": ["clsx", "tailwind-merge"],
   "files": [
     {
