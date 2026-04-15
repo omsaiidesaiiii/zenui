@@ -28,7 +28,7 @@ export default function LandingPage() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <button className="uiverse-btn !w-[120px] !h-[40px] text-sm">
+            <button className="uiverse-btn !w-[120px] !h-[35px] text-[12px]">
               Get Started
             </button>
           </div>
@@ -39,22 +39,22 @@ export default function LandingPage() {
       <section className="relative pt-40 pb-24 px-6 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] max-w-full h-[800px] pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 98, 57, 0.15) 0%, transparent 70%)' }}></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3d4a3d]/20 bg-[#1c1b1b] text-[#006239] text-xs font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3d4a3d]/20 bg-[#1c1b1b] text-[#3ecf8e] text-xs font-medium mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#006239] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#006239]"></span>
             </span>
-            v2.4.0 is now live
+            New Components Added
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
             Build UI faster, <br/>
-            <span className="text-[#006239] italic">Scale like a pro</span>
+            <span className="text-[#3ecf8e] italic">Scale like a pro</span>
           </h1>
           <p className="text-lg md:text-xl text-[#c8c6c5] max-w-2xl mx-auto mb-10 leading-relaxed">
             An obsidian-grade component library designed for the technical elite. Copy-paste components that feel like a high-end IDE.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="uiverse-btn !w-full sm:!w-[180px] !h-[56px] text-lg">
+            <button className="uiverse-btn !w-full sm:!w-[180px] !h-[56px] text-ls">
               Get Started
               <ArrowRight className="w-5 h-5" />
             </button>
@@ -237,7 +237,7 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Start building in seconds</h2>
           <p className="text-[#c8c6c5] mb-12 text-lg">Join 10,000+ developers building high-end interfaces with ZenUI.</p>
-          <button className="uiverse-btn mx-auto !w-[220px] !h-[64px] text-xl">
+          <button className="uiverse-btn mx-auto !w-[220px] !h-[64px] text-lg">
             Get Started for Free
           </button>
         </div>
