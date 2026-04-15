@@ -1,0 +1,10 @@
+{
+  "name": "button",
+  "dependencies": ["clsx", "tailwind-merge"],
+  "files": [
+    {
+      "path": "components/ui/button.tsx",
+      "content": "export function Button() { return <button>Click</button>; }"
+    }
+  ]
+}
