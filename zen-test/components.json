@@ -1,0 +1,9 @@
+{
+  "style": "modern",
+  "typescript": true,
+  "tailwind": true,
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}

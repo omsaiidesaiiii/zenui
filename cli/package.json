@@ -1,18 +1,30 @@
 {
-  "name": "cli",
+  "name": "zen-ui-cli",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "The command-line interface for ZenUI components.",
+  "main": "bin/cli.js",
   "bin": {
-    "zenui": "./index.js"
+    "zenui": "bin/cli.js"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
+  "files": [
+    "bin",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "ui",
+    "components",
+    "react",
+    "nextjs",
+    "tailwind",
+    "zenui",
+    "cli"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
     "chalk": "^5.6.2",
     "clsx": "^2.1.1",
