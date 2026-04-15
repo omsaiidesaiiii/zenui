@@ -27,7 +27,7 @@ export default function LandingPage() {
             <div className="hidden md:flex items-center gap-6">
               <Link href="/docs" className="text-[#3ecf8e] border-b-2 border-[#3ecf8e] pb-1 tracking-tight font-bold">Docs</Link>
               <Link href="/components" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">Components</Link>
-              <Link href="https://github.com" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">GitHub</Link>
+              <Link href="https://github.com/omsaiidesaiiii" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">GitHub</Link>
             </div>
           </div>
           <div className="flex items-center gap-4">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/website/theme-provider";
+import Link from "next/link";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,7 +37,9 @@ export default function RootLayout({
           </div>
           <footer className="py-8 border-t border-[var(--border)] text-center">
             <p className="text-sm text-[var(--muted-foreground)]">
-              Made with 🤍 by <span className="text-[var(--foreground)] font-medium">Omsai Desai </span>
+              Made with 🤍 by <span className="text-[var(--foreground)] font-medium">
+                 <Link href="https://github.com/omsaiidesaiiii"> Omsai Desai </Link>
+                 </span>
             </p>
           </footer>
         </ThemeProvider>
