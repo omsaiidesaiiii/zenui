@@ -19,7 +19,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans">
       {/* Nav Shell */}
-      <nav className="fixed top-0 w-full z-50 bg-neutral-700/10 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
+      <nav className="fixed top-0 w-full z-50 bg-neutral-700/10 backdrop-blur-xl border-b border-gray-500/15 shadow-2xl shadow-emerald-500/5">
         <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">Zen<span className="text-[#3ecf8e]">UI</span></Link>
@@ -67,13 +67,13 @@ export default function LandingPage() {
             An obsidian-grade component library designed for the technical elite. Copy-paste components that feel like a high-end IDE.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button className="uiverse-btn !w-full sm:!w-[180px] !h-[56px] text-ls">
+            <Link href="/components" className="uiverse-btn !w-full sm:!w-[180px] !h-[56px] text-ls">
               Get Started
               <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="w-full sm:w-auto bg-[#2a2a2a] text-[#e5e2e1] font-bold px-8 py-4 rounded-xl border border-[#3d4a3d]/10 hover:bg-[#3a3939] transition-all">
+            </Link>
+            <Link href="/components" className="w-full sm:w-auto bg-[#2a2a2a] text-[#e5e2e1] font-bold px-8 py-4 rounded-xl border border-[#3d4a3d]/10 hover:bg-[#3a3939] transition-all text-center">
               View Components
-            </button>
+            </Link>
           </div>
         </div>
       </section>
@@ -93,9 +93,12 @@ export default function LandingPage() {
             <div className="p-6 font-mono text-sm sm:text-base flex justify-between items-center bg-[#0e0e0e]">
               <div className="flex gap-4">
                 <span className="text-[#006239] shrink-0">$</span>
-                <span className="text-[#e5e2e1]">npx zenui@latest <span className="text-[#ffb5ab]">init</span></span>
+                <span className="text-[#e5e2e1] select-all">npx zenui@latest <span className="text-[#ffb5ab]">init</span></span>
               </div>
-              <button className="p-2 rounded-lg hover:bg-[#201f1f] transition-colors text-[#c8c6c5] hover:text-[#3ecf8e]">
+              <button 
+                onClick={() => navigator.clipboard.writeText("npx zenui@latest init")}
+                className="p-2 rounded-lg hover:bg-[#201f1f] transition-colors text-[#c8c6c5] hover:text-[#3ecf8e]"
+              >
                 <Copy className="w-5 h-5" />
               </button>
             </div>
@@ -307,9 +310,9 @@ export default function LandingPage() {
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-extrabold mb-8">Start building in seconds</h2>
           <p className="text-[#c8c6c5] mb-12 text-lg">Join 10,000+ developers building high-end interfaces with ZenUI.</p>
-          <button className="uiverse-btn mx-auto !w-[220px] !h-[64px] text-lg">
+          <Link href="/components" className="uiverse-btn mx-auto !w-[220px] !h-[64px] text-lg">
             Get Started for Free
-          </button>
+          </Link>
         </div>
       </section>
 

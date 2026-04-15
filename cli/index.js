@@ -225,16 +225,16 @@ function findConfigFile (startPath = process.cwd ()) {
 }
 
 program
-  .name ('your-ui')
-  .description ('CLI for your UI library')
+  .name ('zenui')
+  .description ('CLI for ZenUI library')
   .version ('1.0.0');
 
 program
   .command ('init')
-  .description ('Initialize UI library')
+  .description ('Initialize ZenUI library')
   .option ('--yes, -y', 'Skip prompts and use defaults')
   .action (async (options) => {
-    console.log ('🚀 Initializing your-ui...');
+    console.log ('🚀 Initializing ZenUI...');
 
     await setupProject (options.yes);
 

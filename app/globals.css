@@ -1,20 +1,78 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+}
+
 :root {
-  --background: white;
-  --foreground: black;
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+  --muted: #f4f4f5;
+  --muted-foreground: #71717a;
+  --border: #e4e4e7;
+  --accent: #3ecf8e;
+  --accent-foreground: #ffffff;
+  --accent-dark: #006239;
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
+  --ring: #3ecf8e;
+  --sidebar-bg: #fafafa;
+  --sidebar-border: #e4e4e7;
+  --code-bg: #1e1e2e;
+  --code-foreground: #cdd6f4;
+  --preview-bg: #ffffff;
+  --preview-border: #e4e4e7;
+  --preview-dot: #d4d4d8;
 }
 
 .dark {
   --background: #0a0a0a;
-  --foreground: white;
+  --foreground: #e5e2e1;
+  --muted: #171717;
+  --muted-foreground: #a1a1aa;
+  --border: #1f1f1f;
+  --accent: #3ecf8e;
+  --accent-foreground: #ffffff;
+  --accent-dark: #006239;
+  --card: #111111;
+  --card-foreground: #e5e2e1;
+  --popover: #111111;
+  --popover-foreground: #e5e2e1;
+  --ring: #3ecf8e;
+  --sidebar-bg: #0e0e0e;
+  --sidebar-border: #1f1f1f;
+  --code-bg: #0e0e0e;
+  --code-foreground: #e5e2e1;
+  --preview-bg: #0a0a0a;
+  --preview-border: #1f1f1f;
+  --preview-dot: #2a2a2a;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
 }
 
+/* Scrollbar styling for sidebar */
+.docs-sidebar::-webkit-scrollbar {
+  width: 4px;
+}
+.docs-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.docs-sidebar::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+.docs-sidebar::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-foreground);
+}
+
+/* Landing page button gradient */
 .uiverse-btn {
   width: 140px;
   height: 50px;

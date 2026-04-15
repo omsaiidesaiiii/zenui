@@ -1,0 +1,11 @@
+{
+  "name": "card",
+  "description": "A clean, minimal card component",
+  "dependencies": ["clsx", "tailwind-merge"],
+  "files": [
+    {
+      "path": "components/ui/card.tsx",
+      "content": "import { cn } from \"@/lib/utils\";\n\nexport function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {\n  return (\n    <div\n      className={cn(\n        \"rounded-2xl border bg-white dark:bg-neutral-900 p-6 shadow-md hover:shadow-lg transition\",\n        className\n      )}\n      {...props}\n    />\n  );\n}"
+    }
+  ]
+}
