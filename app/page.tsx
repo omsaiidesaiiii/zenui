@@ -4,11 +4,6 @@ import Link from 'next/link';
 import { 
   ArrowRight,
   Copy,
-  LayoutDashboard,
-  Palette,
-  Pointer,
-  Check,
-  Layers,
   Terminal,
   Moon,
   Code
@@ -99,7 +94,7 @@ export default function LandingPage() {
             <div className="p-6 font-mono text-sm sm:text-base flex justify-between items-center bg-[#0e0e0e]">
               <div className="flex gap-4">
                 <span className="text-[#006239] shrink-0">$</span>
-                <span className="text-[#e5e2e1] select-all">npx zenui@latest <span className="text-[#ffb5ab]">init</span></span>
+                <span className="text-[#e5e2e1] select-all">npx zen-ui-cli@latest <span className="text-[#ffb5ab]">init</span></span>
               </div>
               <button 
                 onClick={() => navigator.clipboard.writeText("npx zenui@latest init")}
@@ -327,7 +322,7 @@ export default function LandingPage() {
         <div className="max-w-7xl mx-auto w-full grid grid-cols-2 md:grid-cols-4 gap-8">
           <div className="col-span-2 md:col-span-1">
             <div className="text-lg font-bold text-neutral-200 mb-4">ZenUI</div>
-            <p className="font-sans text-sm text-neutral-500 mb-6 max-w-xs">Built for the technical elite. The UI library that doesn't hold you back.</p>
+            <p className="font-sans text-sm text-neutral-500 mb-6 max-w-xs">Built for the technical elite. The UI library that doesn&apos;t hold you back.</p>
             <p className="font-sans text-xs text-neutral-600">© 2024 ZenUI. Built for the technical elite.</p>
           </div>
           <div>

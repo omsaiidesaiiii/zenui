@@ -165,7 +165,7 @@ export default function DarkVeil({
       program.uniforms.uScan.value = scanlineIntensity;
       program.uniforms.uScanFreq.value = scanlineFrequency;
       program.uniforms.uWarp.value = warpAmount;
-      (program.uniforms.uColor.value as any) = color;
+      (program.uniforms.uColor.value as [number, number, number]) = color;
       renderer.render({ scene: mesh });
       frame = requestAnimationFrame(loop);
     };

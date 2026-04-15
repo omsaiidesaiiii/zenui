@@ -43,7 +43,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         transition={{ duration: 0.1 }}
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        {...(props as any)}
+        {...props}
       />
     );
   }

@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown, ChevronUp, Loader2, Mail } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { ComponentPreview } from "@/components/website/component-preview";
 import { CodeBlock } from "@/components/website/code-block";
 import type { ComponentMeta } from "@/lib/component-registry";
@@ -292,8 +292,15 @@ const docs = {
   }
 };
 
+interface ComponentDocData {
+  import: string;
+  installation: { title: string; code: string; collapsible?: boolean }[];
+  props?: { name: string; type: string; default?: string; description: string }[];
+  examples: { title: string; code: string; preview: React.ReactNode }[];
+}
+
 export function ComponentDoc({ meta }: { meta: ComponentMeta }) {
-  const doc = (docs as any)[meta.slug];
+  const doc = (docs as Record<string, ComponentDocData>)[meta.slug];
 
   return (
     <motion.div 
@@ -315,7 +322,7 @@ export function ComponentDoc({ meta }: { meta: ComponentMeta }) {
         className="space-y-6"
       >
         <h2 className="text-2xl font-bold tracking-tight border-b border-[var(--border)] pb-2">Installation</h2>
-        {doc?.installation.map((step: any, i: number) => (
+        {doc?.installation.map((step: { title: string; code: string; collapsible?: boolean }, i: number) => (
           <div key={i} className="space-y-3">
             <h3 className="text-lg font-semibold">{step.title}</h3>
             {step.collapsible ? (
@@ -341,7 +348,7 @@ export function ComponentDoc({ meta }: { meta: ComponentMeta }) {
           <h3 className="text-lg font-semibold">Import</h3>
           <CodeBlock code={doc?.import} language="tsx" />
         </div>
-        {doc?.examples.map((example: any, i: number) => (
+        {doc?.examples.map((example: { title: string; code: string; preview: React.ReactNode }, i: number) => (
           <div key={i} className="space-y-4 pt-4">
             <h3 className="text-lg font-semibold">{example.title}</h3>
             <ComponentPreview code={example.code}>{example.preview}</ComponentPreview>
