@@ -1,13 +1,31 @@
-import fs from "fs";
-import path from "path";
+"use client";
+
+import { ReactNode, useEffect, useState } from "react";
 import { notFound } from "next/navigation";
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const filePath = path.join(process.cwd(), "content/components", `${params.slug}.mdx`);
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
-  if (!fs.existsSync(filePath)) return notFound();
+export default function Page({ params }: PageProps) {
+  const [Content, setContent] = useState<(() => ReactNode) | null>(null);
+  const [slug, setSlug] = useState<string>("");
 
-  const Content = (await import(`@/content/components/${params.slug}.mdx`)).default;
+  useEffect(() => {
+    (async () => {
+      const { slug: resolvedSlug } = await params;
+      setSlug(resolvedSlug);
+
+      try {
+        const module = await import(`@/content/components/${resolvedSlug}.mdx`);
+        setContent(() => module.default);
+      } catch (error) {
+        notFound();
+      }
+    })();
+  }, [params]);
+
+  if (!Content) return null;
 
   return (
     <div className="prose dark:prose-invert max-w-3xl mx-auto p-10">
