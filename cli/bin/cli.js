@@ -204,7 +204,7 @@ program
   .action(async (component) => {
     const spinner = ora(`Fetching ${chalk.cyan(component)}...`).start();
     try {
-      const res = await fetch(`http://localhost:3001/components/${component}`);
+      const res = await fetch(`https://zenui-1r7l.onrender.com/components/${component}`);
       if (!res.ok) {
         spinner.fail(chalk.red(`Component "${component}" not found.`));
         return;
@@ -227,7 +227,7 @@ program
       }
     } catch (error) {
       spinner.fail(chalk.red('Error fetching component: ' + error.message));
-      logger.info('Make sure the ZenUI registry is running at http://localhost:3001');
+      logger.info('Make sure the backend is running on https://zenui-1r7l.onrender.com');
     }
   });
 
@@ -237,7 +237,7 @@ program
   .action(async () => {
     const spinner = ora('Fetching available components...').start();
     try {
-      const res = await fetch('http://localhost:3001/components');
+      const res = await fetch('https://zenui-1r7l.onrender.com/components');
       if (!res.ok) {
         spinner.fail(chalk.red('Failed to fetch components.'));
         return;
@@ -257,7 +257,7 @@ program
       }
     } catch (error) {
       spinner.fail(chalk.red('Error: ' + error.message));
-      logger.info('Registry unavailable at http://localhost:3001');
+      logger.info('Registry unavailable at https://zenui-1r7l.onrender.com');
     }
   });
 
