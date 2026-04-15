@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 import Link from 'next/link';
 import { 
@@ -12,12 +13,13 @@ import {
   Moon,
   Code
 } from 'lucide-react';
+import DarkVeil from './DarkVeil';
 
 export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans">
       {/* Nav Shell */}
-      <nav className="fixed top-0 w-full z-50 bg-neutral-950/60 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
+      <nav className="fixed top-0 w-full z-50 bg-neutral-800/10 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
         <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">ZenUI</Link>
@@ -36,10 +38,21 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-40 pb-24 px-6 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] max-w-full h-[800px] pointer-events-none" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(0, 98, 57, 0.15) 0%, transparent 70%)' }}></div>
+      <section className="relative pt-40 pb-32 px-6 overflow-hidden">
+        <div className="absolute inset-0 z-0 opacity-40 pointer-events-none mt-10" style={{ height: '800px' }}>
+          <DarkVeil 
+            color={[0.243, 0.812, 0.557]}
+            hueShift={0}
+            noiseIntensity={0}
+            scanlineIntensity={0}
+            speed={0.5}
+            scanlineFrequency={0}
+            warpAmount={0}
+          />
+        </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] max-w-full h-[800px] pointer-events-none z-[1]" style={{ background: 'radial-gradient(circle at 50% 50%, rgba(62, 207, 142, 0.1) 0%, transparent 70%)' }}></div>
         <div className="max-w-5xl mx-auto text-center relative z-10">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3d4a3d]/20 bg-[#1c1b1b] text-[#3ecf8e] text-xs font-medium mb-8">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#3d4a3d]/20 bg-[#1c1b1b] text-[#ffffff] text-xs font-medium mb-8">
             <span className="relative flex h-2 w-2">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#006239] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#006239]"></span>
