@@ -1,141 +1,87 @@
-# ZenUI Setup Guide
+# 🛠 ZenUI Setup & Developer Guide
 
-## Prerequisites
+This guide covers how to use ZenUI in your project and how to contribute to the library.
 
-- Node.js and npm installed
-- Windows, macOS, or Linux
+## 🚀 Usage Guide (For Users)
 
-## Installation
+### 1. Initialize ZenUI
+Run the following in your React or Next.js project root:
 
-### 1. Install CLI Dependencies
+```bash
+npx zen-ui-cli init
+```
 
+*This will walk you through setting up Tailwind CSS, TypeScript, and path aliases.*
+
+### 2. Discover Components
+Check what's available in the registry:
+
+```bash
+npx zen-ui-cli list
+```
+
+### 3. Add Components
+Install any component directly into your codebase:
+
+```bash
+npx zen-ui-cli add button
+```
+
+---
+
+## 👨‍💻 Developer Guide (For Contributors)
+
+If you want to modify the CLI or the Registry API, follow these steps:
+
+### Prerequisites
+- Node.js (v18+)
+- Local registry server running on port 3001
+
+### 1. Repository Structure
+- `/cli`: The command-line interface (published to npm as `zen-ui-cli`).
+- `/ui-registry-api`: The backend server that stores and serves component code.
+- `/app`: The internal documentation/website for ZenUI.
+
+### 2. Setting Up the CLI Locally
 ```bash
 cd cli
 npm install
-```
-
-### 2. Install Backend API Dependencies
-
-```bash
-cd ui-registry-api
-npm install
-```
-
-### 3. Create a symlink for the CLI (optional but recommended)
-
-```bash
-cd cli
 npm link
 ```
+*Using `npm link` allows you to run the `zenui` command globally using your local files instead of the published npm package.*
 
-This allows you to use `zen-ui` command globally.
-
-## Running the Backend
-
-Start the UI Registry API server in a terminal:
-
+### 3. Running the Registry API
+The CLI fetches components from this API. You must keep it running during development:
 ```bash
 cd ui-registry-api
-node index.js
-```
-
-You should see:
-```
-Server running on port 3001
-```
-
-**Keep this terminal open while using the CLI.**
-
-## Using the CLI
-
-### Initialize a new project
-
-```bash
-# Interactive mode (prompts for style, TypeScript, Tailwind)
-zen-ui init
-
-# Quick mode (skip all prompts, use defaults)
-zen-ui init --yes
-zen-ui init -y
-```
-
-This will:
-- ✅ Detect your project framework (Next.js or React)
-- ✅ Create `components.json` configuration
-- 📁 Create folder structure (`components/ui`, `lib`)
-- ✅ Create utility functions (`lib/utils.ts`)
-- 📦 Install required dependencies
-
-### List available components
-
-```bash
-zen-ui list
-```
-
-Shows all available components from the registry.
-
-### Add a component
-
-```bash
-zen-ui add button
-```
-
-Installs the specified component and its dependencies.
-
-## Available Commands
-
-| Command | Description |
-|---------|-------------|
-| `zen-ui init [--yes]` | Initialize UI library in your project |
-| `zen-ui list` | List all available components |
-| `zen-ui add <component>` | Install a component from the registry |
-
-## Troubleshooting
-
-### "Failed to fetch components" or "Failed to fetch component"
-
-**Solution:** Make sure the backend API is running:
-```bash
-cd ui-registry-api
-node index.js
-```
-
-The API must be running on `http://localhost:3001` for the CLI to work.
-
-### Module not found errors
-
-**Solution:** Install dependencies:
-```bash
 npm install
+node index.js
 ```
 
-## Project Structure
+### 4. Adding New Components to Registry
+1. Add the component code in the `ui-registry-api/components` folder.
+2. Update the `index.js` (or `data.json` if used) in the registry to include the new component metadata.
 
-After running `zen-ui init`, your project will have:
+---
 
-```
-components/
-  ui/          # UI components go here
-lib/
-  utils.ts     # Utility functions (cn helper)
-components.json # Configuration file
-```
+## 🔧 Registry API Endpoints
 
-## Configuration File (components.json)
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/components` | Returns a list of all component metadata |
+| GET | `/components/:id` | Returns the source code and dependencies for a component |
 
-```json
-{
-  "style": "default",
-  "typescript": true,
-  "tailwind": true,
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils"
-  }
-}
-```
+---
 
-- `style`: Component style preset (default or modern)
-- `typescript`: Whether to use TypeScript
-- `tailwind`: Whether to use Tailwind CSS
-- `aliases`: Path aliases for imports
+## 📝 Troubleshooting
+
+### Registry Connexion Error
+If the CLI says `Registry unavailable at http://localhost:3001`, ensure you have started the `ui-registry-api` server.
+
+### Tailwind CSS Conflicts
+ZenUI works best with a standard Tailwind CSS setup. If your `tailwind.config` is highly custom, you may need to manually add the ZenUI component paths to the `content` array.
+
+---
+
+## 📜 License
+MIT

@@ -1,10 +1,30 @@
 # Button
 
-A reusable button component with variants.
+A premium, highly-customizable button component with multiple variants and states.
+
+## Installation
+
+```bash
+npx zen-ui-cli add button
+```
 
 ## Usage
 
 ```tsx
 import { Button } from "@/components/ui/button";
 
-<Button>Click me</Button>
+export default function Example() {
+  return (
+    <Button variant="default" size="md">
+      Click me
+    </Button>
+  );
+}
+```
+
+## Variants
+- `default`
+- `secondary`
+- `outline`
+- `ghost`
+- `danger`

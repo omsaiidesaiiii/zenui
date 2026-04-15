@@ -43,7 +43,7 @@ export default function InstallationPage() {
           <div className="space-y-4">
             <h3 className="text-sm font-medium text-[var(--foreground)]">Run the init command</h3>
             <CodeBlock 
-              code="npx zenui@latest init" 
+              code="npx zen-ui-cli init" 
               language="bash" 
             />
             <p className="text-xs text-[var(--muted-foreground)]">

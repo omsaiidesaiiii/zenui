@@ -262,7 +262,7 @@ const docs = {
   button: {
     import: `import { Button } from \"@/components/ui/button\"`,
     installation: [
-      { title: "CLI", code: "npx zenui install button" },
+      { title: "CLI", code: "npx zen-ui-cli add button" },
       { title: "Manual", code: buttonSource, collapsible: true }
     ],
     props: [
@@ -279,7 +279,7 @@ const docs = {
   card: {
     import: `import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from \"@/components/ui/card\"`,
     installation: [
-      { title: "CLI", code: "npx zenui install card" },
+      { title: "CLI", code: "npx zen-ui-cli add card" },
       { title: "Manual", code: cardSource, collapsible: true }
     ],
     props: [

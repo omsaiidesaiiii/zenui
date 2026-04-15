@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 ZenUI
 
-## Getting Started
+**ZenUI** is a premium, developer-first UI library built for React and Next.js. It's designed to help you build stunning, high-performance user interfaces with zero friction.
 
-First, run the development server:
+Unlike heavy component libraries, ZenUI uses a **CLI-first approach** (similar to shadcn), giving you full ownership of the code.
+
+---
+
+## ✨ Features
+
+- 💎 **Beautiful Design:** Modern, sleek components out of the box.
+- 🛠 **CLI-Driven:** Add components directly to your project using `npx`.
+- 🎨 **Minimal & Typed:** Fully TypeScript-ready and built with Tailwind CSS.
+- 📦 **Control:** The code lives in your `components/ui` folder—no node_modules bloat.
+
+---
+
+## 🚀 Quick Start
+
+Initialize ZenUI in your Next.js/React project:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npx zen-ui-cli init
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Add your first component:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npx zen-ui-cli add button
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠 Commands
 
-To learn more about Next.js, take a look at the following resources:
+| Command | Description |
+|---------|-------------|
+| `npx zen-ui-cli init` | Setup your project (components.json, utils, etc) |
+| `npx zen-ui-cli list` | See all available components in the registry |
+| `npx zen-ui-cli add <name>` | Copy a component into your project |
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🏗 Project Structure
 
-## Deploy on Vercel
+After running `init`, ZenUI sets up the following in your project:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```text
+├── components/
+│   └── ui/             # Your ZenUI components
+├── lib/
+│   └── utils.ts        # The 'cn' utility helper
+└── components.json     # Configuration file
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 📜 License
+Licensed under the [MIT License](LICENSE).

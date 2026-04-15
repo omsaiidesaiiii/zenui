@@ -30,7 +30,16 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="flex-1 flex flex-col">
+            {children}
+          </div>
+          <footer className="py-8 border-t border-[var(--border)] text-center">
+            <p className="text-sm text-[var(--muted-foreground)]">
+              Made with love by <span className="text-[var(--foreground)] font-medium">Omsai Desai 🤍</span>
+            </p>
+          </footer>
+        </ThemeProvider>
       </body>
     </html>
   );

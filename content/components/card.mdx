@@ -1,0 +1,39 @@
+# Card
+
+A flexible container for content with support for headers, titles, descriptions, and footers.
+
+## Installation
+
+```bash
+npx zen-ui-cli add card
+```
+
+## Usage
+
+```tsx
+import { 
+  Card, 
+  CardHeader, 
+  CardTitle, 
+  CardDescription, 
+  CardContent, 
+  CardFooter 
+} from "@/components/ui/card";
+
+export default function Example() {
+  return (
+    <Card className="w-[350px]">
+      <CardHeader>
+        <CardTitle>ZenUI Card</CardTitle>
+        <CardDescription>Modern card component with glassmorphism.</CardDescription>
+      </CardHeader>
+      <CardContent>
+        <p>This is the main content area of the card.</p>
+      </CardContent>
+      <CardFooter>
+        <p className="text-sm text-gray-500">Footer text</p>
+      </CardFooter>
+    </Card>
+  );
+}
+```
