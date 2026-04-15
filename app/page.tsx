@@ -19,7 +19,7 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-[#e5e2e1] selection:bg-[#006239] selection:text-white font-sans">
       {/* Nav Shell */}
-      <nav className="fixed top-0 w-full z-50 bg-neutral-600/5 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
+      <nav className="fixed top-0 w-full z-50 bg-neutral-700/10 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
         <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-8">
             <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">ZenUI</Link>

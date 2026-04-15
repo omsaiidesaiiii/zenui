@@ -62,12 +62,17 @@ void mainImage(out vec4 fragColor,in vec2 fragCoord){
     uv.y*=-1.;
     
     // Smooth flow without drifting off-screen
-    float flowTime = uTime * 0.2;
-    uv.x += sin(flowTime * 0.5) * 0.1;
-    uv.y += cos(flowTime * 0.3) * 0.1;
+    float t = uTime * 0.5;
+    uv.x += sin(t * 0.3) * 0.15;
+    uv.y += cos(t * 0.5) * 0.15;
     
-    uv+=uWarp*vec2(sin(uv.y*6.283+uTime*0.5),cos(uv.x*6.283+uTime*0.5))*0.05;
-    fragColor=cppn_fn(uv,0.1*sin(0.3*uTime),0.1*sin(0.69*uTime),0.1*sin(0.44*uTime));
+    // Ensure neural net inputs are cyclic so it 'loops' forever
+    float in0 = 0.15 * sin(t);
+    float in1 = 0.15 * cos(t * 0.6);
+    float in2 = 0.15 * sin(t * 0.82);
+    
+    uv+=uWarp*vec2(sin(uv.y*6.283+t),cos(uv.x*6.283+t))*0.05;
+    fragColor=cppn_fn(uv, in0, in1, in2);
 }
 
 void main(){
