@@ -1,0 +1,24 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "zen-ui": "./index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "chalk": "^5.6.2",
+    "clsx": "^2.1.1",
+    "commander": "^14.0.3",
+    "fs-extra": "^11.3.4",
+    "ora": "^9.3.0",
+    "tailwind-merge": "^3.5.0"
+  }
+}
