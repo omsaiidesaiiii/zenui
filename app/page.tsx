@@ -22,7 +22,7 @@ export default function LandingPage() {
       <nav className="fixed top-0 w-full z-50 bg-neutral-700/10 backdrop-blur-xl border-b border-emerald-500/15 shadow-2xl shadow-emerald-500/5">
         <div className="flex justify-between items-center h-16 px-6 max-w-7xl mx-auto w-full">
           <div className="flex items-center gap-8">
-            <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">ZenUI</Link>
+            <Link href="/" className="text-xl font-black text-neutral-100 tracking-tighter">Zen<span className="text-[#3ecf8e]">UI</span></Link>
             <div className="hidden md:flex items-center gap-6">
               <Link href="/docs" className="text-[#3ecf8e] border-b-2 border-[#3ecf8e] pb-1 tracking-tight font-bold">Docs</Link>
               <Link href="/components" className="text-neutral-400 hover:text-[#3ecf8e] transition-colors tracking-tight font-bold">Components</Link>
